@@ -1,0 +1,2 @@
+OneInst.zip-a simple component that restricts a running  app to one instance.
+D2,D3,D4,D5*FREE*Alexander Rodigin ras@ras.udm.ru 

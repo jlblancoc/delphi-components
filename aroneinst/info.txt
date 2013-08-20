@@ -1,0 +1,11 @@
+OneInst.zip-simple component that prevents a 
+user from running multiple instances of the 
+same app. The second instance will be closed 
+and the first one activated. You may define 
+a message text to show and a title for that 
+dialog. Also you can write a handler for an 
+OnAnotherInstance event. Usually there is no
+need to modify Message and Mutex properties,
+but you may change them anyway but be careful
+to set them to a different value in the
+different applications.

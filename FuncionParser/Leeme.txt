@@ -1,0 +1,95 @@
+************* Parser de Funciones Versión 1.0 *****************
+_________________________________________________________
+
+             Autor : Carlos García Trujillo
+             E-mail: cgar1136@telebot.com
+                     cgar1136@latinmail.com  
+      http://www.geocities.com/ResearchTriangle/Node/2174/
+_________________________________________________________
+25 de Mayo de 1999
+Xalapa, Veracruz; México.
+
+Descripción:
+---------------------------------------------------------
+
+  Este es un componente no visual, que sirve para evaluar funciones
+matemáticas definidas por el usuario.
+
+  Tiene como caracteristica que puede evaluar expresiones matemáticas 
+como una calculadora común, y además que soporta variables de usuario,
+por lo que pueden definirse funciones de más de una variable sin 
+mayor problema.
+  
+  Los operadores que soporta el componente son:
+
+    +    :   Adición
+    -    :   Substracción
+    *    :   Multiplicación
+    /    :   División
+    ^    :   Exponencial (Aunque solo soporta números positivos para la base)
+    (    :   Parentesis que abre.
+    )    :   Parentesis que cierra.
+   MOD   :   Operador MOD.  Solo para enteros (Si se usa con flotantes
+             el valor se redondea)
+
+   ABS      (Rango: -1e4932..1e4932)
+   ATAN     (Rango: -1e4932..1e4932)
+   COS      (Rango: -1e18..1e18)
+   EXP      (Rango: -11356..11356)
+   LN       (Rango: 0..1e4932)
+   ROUND    (Rango: -1e9..1e9)
+   SIN      (Rango: -1e18..1e18)
+   SQRT     (Rango: 0..1e4932)
+   SQR      (Rango: -1e2446..1e2446)
+   TRUNC    (Rango: -1e9..1e9)
+
+
+Utilización:
+--------------------------------------------------------------------
+ 
+  Primeramente se debe asignar en la Propiedad "Funcion", la cadena
+que contenga la función o expresión a evaluar, despues se llama al
+método "Parse", si no sucede ningún error en el proceso de Parseo,
+el valor de la función evaluada se encontrará en la Propiedad "ParseValor",
+y si llegase a ocurrir un error, la propiedad "ParseError" devuelve un
+"True", y se dispara el evento "OnParserError", en donde uno de los 
+parámetros específica el tipo de error que ocurrió en el proceso de
+Parseo...
+
+  Para poder responder a definiciones de Variables dentro de la Expresión
+o función a evaluar, existe el evento "OnPideVariable" el cual es un evento
+que se dispara cuando el parser encuentra una variable y pide un valor 
+numérico por el cual sustituirla, la variable encontrada se pasa como el
+Parámetro "Variable", y el Valor con el cual se debe sustituir la variable 
+se devuelve en el Parámetro "Valor", además se incluye otro parámetro para
+determinar que no es una variable permisible, devolviendo en el parámetro
+"Found" un "False". La forma en como definas el código para este evento
+va a determinar si el parser será CaseSensitive o CaseInsensitive. :-) 
+
+  El demo incluido muestra un claro ejemplo de la utilización de este componente
+evaluando y graficando funciones de 2 variables.
+ 
+
+Instalación:
+---------------------------------------------------------
+
+  Este componente funciona para todas las versiones de Delphi,
+favor de comunicarme si tienen problemas probando elcomponente con alguna
+de estas versiones.
+
+Para instalarlo basta seguir estos pasos:
+
+1.- Primero extrae el contenido del archivo "FuncionParser.Zip" en el directorio Delphi(X)\Lib.
+2.- En Delphi ve al menú: "Component / Install Component" (esto es en Delphi 2-4,
+ya que la forma de instalarcomponentes es distinta en Delphi 1 :"OPTIONS / INSTALL COMPONENTS")
+y selecciona el archivo "FuncionParser.pas" 
+3.- El componente se instalará en la carpeta de "Dialogs" como "FuncionParser". 
+
+Licencia:
+---------------------------------------------------------
+  
+  Este componente es Freeware, y eres libre de redistribuirlo y utilizarlo
+en tus aplicaciones, solo porfavor menciona mi nombre en la documentación 
+de tu programa, (si no es mucha molestia), o enviame una postal de agradecimiento.
+
+:-)
