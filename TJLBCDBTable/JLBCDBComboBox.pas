@@ -9,7 +9,7 @@ type
   TJLBCDBComboBox = class(TComboBox)
   private
     pTabla: TJLBCDBTable;
-    pCampo: String;
+    pCampo: AnsiString;
     nextone : TWinControl;
 
     procedure OnTecla(Sender: TObject; var Key: Word; Shift: TShiftState) ;
@@ -24,7 +24,7 @@ type
 
   published
     property SourceTable: TJLBCDBTable read pTabla write pTabla default nil;
-    property SourceField: String read pCampo write pCampo;
+    property SourceField: AnsiString read pCampo write pCampo;
     property NextControl: TWinControl read nextone write nextone default nil;
 
   end;
@@ -56,7 +56,7 @@ end;
 procedure TJLBCDBComboBox.FillCombo;
 var
  i,n: Integer;
- aux : String;
+ aux : AnsiString;
 begin //
   Items.Clear;
   n:= pTabla.GetRegCount;

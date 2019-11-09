@@ -34,7 +34,7 @@ procedure TJLBCDBStringGrid.FillData;
 var
  i,j,aux,aux2   : LongInt;
  nReg,nCam      : LongInt;
- n,k            :String;
+ n,k            : AnsiString;
 begin
  if (dbTabla=nil) then raise Exception.Create('ERROR: No se ha indicado origen de datos para tabla...');
 

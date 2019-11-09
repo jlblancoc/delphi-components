@@ -77,7 +77,7 @@ type
    procedure AppendRecord;
    procedure DeleteRecord(i: Integer);
 
-   procedure GetField(i:LongInt;var nam,kind:String;var n,m:Integer);
+   procedure GetField(i:LongInt;var nam,kind:AnsiString;var n,m:Integer);
    function  GetFieldCount: LongInt;
    procedure AddField(nam,kind: String);
    function  FindFieldIndex(nam: String):Integer;
@@ -190,8 +190,8 @@ end;
 
 procedure TJLBCDBTable.CreateTable;
 begin
- SysUtils.DecimalSeparator:=',';
- SysUtils.ThousandSeparator:='.';
+ FormatSettings.DecimalSeparator:=',';
+ FormatSettings.ThousandSeparator:='.';
  nCampos:=0;
  nRegistros:=0;
  cursorPos:=0;
@@ -361,7 +361,7 @@ begin
 
 end;
 
-procedure TJLBCDBTable.GetField(i: Integer; var nam, kind: String; var n,
+procedure TJLBCDBTable.GetField(i: Integer; var nam, kind: AnsiString; var n,
   m: Integer);
 begin
  if not self.isActive then raise Exception.Create('JLBCdb ERROR: GetField no valido, la tabla no esta abierta...');
@@ -433,8 +433,8 @@ var
  i: Integer;
  f: TJLBCDBField;
 begin
- SysUtils.DecimalSeparator:=',';
- SysUtils.ThousandSeparator:='.';
+ FormatSettings.DecimalSeparator:=',';
+ FormatSettings.ThousandSeparator:='.';
 
  if isActive then Exit;
 
